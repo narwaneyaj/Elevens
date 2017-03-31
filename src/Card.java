@@ -1,9 +1,14 @@
+import java.util.ArrayList;
+
 /**
  * Card.java
  *
  * <code>Card</code> represents a playing card.
  */
 public class Card {
+	
+	private ArrayList<Card> cards;
+	private int size;
 
 	/**
 	 * String value that holds the suit of the card
@@ -32,36 +37,67 @@ public class Card {
 	 *                  containing the point value of the card
 	 */
 	public Card(String cardRank, String cardSuit, int cardPointValue) {
-		//initializes a new Card with the given rank, suit, and point value
+		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
 		rank = cardRank;
 		suit = cardSuit;
 		pointValue = cardPointValue;
+		
+	}
+	
+	public Card(String [] ranks, String [] suits, int [] values)
+	{
+		for (int i = 0; i < ranks.length; i++)
+		{
+			Card newCard = new Card(ranks[i], suits[i], values[i]);
+			cards.set(i, newCard);
+		}
+		
+		size = cards.size();
+		
 	}
 
-
-	/**
-	 * Accesses this <code>Card's</code> suit.
-	 * @return this <code>Card's</code> suit.
-	 */
-	public String suit() {
-		return suit;
+	public boolean isEmpty()
+	{
+		return cards.isEmpty();
+	}
+	
+	public int size()
+	{
+		return cards.size();
 	}
 
-	/**
-	 * Accesses this <code>Card's</code> rank.
-	 * @return this <code>Card's</code> rank.
-	 */
-	public String rank() {
-		return rank;
+	public Card deal()
+	{
+		Card dealtCard = cards.get((int) Math.random());
+		return dealtCard;
 	}
 
-   /**
-	 * Accesses this <code>Card's</code> point value.
-	 * @return this <code>Card's</code> point value.
-	 */
-	public int pointValue() {
-		return pointValue;
-	}
+//	/**
+//	 * Accesses this <code>Card's</code> suit.
+//	 * @return this <code>Card's</code> suit.
+//	 */
+//	public String suit() {
+//		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+//		return this.suit;
+//   }
+//
+//	/**
+//	 * Accesses this <code>Card's</code> rank.
+//	 * @return this <code>Card's</code> rank.
+//	 */
+//	public String rank() {
+//		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+//		return this.rank;
+//	}
+//
+//   /**
+//	 * Accesses this <code>Card's</code> point value.
+//	 * @return this <code>Card's</code> point value.
+//	 */
+//	public int pointValue() {
+//		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+//		return this.pointValue;
+//	}
 
 	/** Compare this card with the argument.
 	 * @param otherCard the other card to compare to this
@@ -69,11 +105,15 @@ public class Card {
 	 *              are equal to those of the argument;
 	 *         false otherwise.
 	 */
-	public boolean matches(Card otherCard) {
-		return otherCard.suit().equals(this.suit())
-			&& otherCard.rank().equals(this.rank())
-			&& otherCard.pointValue() == this.pointValue();
-	}
+//	public boolean matches(Card otherCard) {
+//		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+//		if ((this.rank == otherCard.rank) && (this.suit == otherCard.suit))
+//		{
+//			return true;
+//		}
+//		
+//		return false;
+//	}
 
 	/**
 	 * Converts the rank, suit, and point value into a string in the format
@@ -85,8 +125,9 @@ public class Card {
 	 * @return a <code>String</code> containing the rank, suit,
 	 *         and point value of the card.
 	 */
-	@Override
-	public String toString() {
-		return rank + " of " + suit + " (point value = " + pointValue + ")";
-	}
+//	@Override
+//	public String toString() {
+//		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+//		return rank + " of " + suit + " (point value = " + pointValue + ")";
+//	}
 }

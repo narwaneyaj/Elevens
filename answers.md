@@ -1,0 +1,4 @@
+1. A deck is a group of different cards.
+2. The deck given contains 6 different cards
+3. Point values will always be an integer, but the suit and ranks can be either integers or Strings, so they will most likely always be Strings, but for an integer, we can cast the String values to integers, if needed.
+4. The order does matter because that is the order it takes in the values in the constructor, so if you put the point value where you meant to put in the suit, then that point value will be taken in as the suit. However, the parameters are all of different types, so it wouldn't accept an integer where a String is required. 
