@@ -19,6 +19,8 @@ public class Deck {
 	 * The next card to be dealt is at size - 1.
 	 */
 	private int size;
+	
+	
 
 
 	/**
@@ -61,8 +63,35 @@ public class Deck {
 	 * Randomly permute the given collection of cards
 	 * and reset the size to represent the entire deck.
 	 */
-	public void shuffle() {
+	public void shuffle(int[] values) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
+		int [] tempValues = new int[values.length];
+		int middleVal = (values.length + 1) / 2;
+		int notShuffledYet = 0;
+		
+		for (int i = 0, j = 0; i < middleVal; i++, j +=2)
+		{
+			tempValues[notShuffledYet] = values[i];
+			notShuffledYet += 2;
+		}
+		
+		notShuffledYet = 1;
+		
+//		for (int x = 0; x < values.length; x++)
+//		{
+//			tempValues[notShuffledYet] = values[x];
+//			notShuffledYet += 2;
+//		}
+//		
+		for (int a = 0; a < values.length; a++)
+		{
+			values[a] = tempValues[a];
+		}
+		
+		for (int j = 0; j < values.length; j++)
+		{
+			System.out.println(values[j]);
+		}
 	}
 
 	/**
