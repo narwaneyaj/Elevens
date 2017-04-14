@@ -1,0 +1,8 @@
+1. Discuss the similarities and differences between Elevens, Thirteens, and Tens.
+	All three games have the same general concept: have a deck of cards, lay a certain number out, make pairs that add up to the given number, and trade out the special cards. There is the small difference of the number that the pairs need to add up to, and whether the special cards (Kings, Queens, and Jacks) can be used as number cards. If they are not, another difference is how the player can eliminate the special cards.
+	
+2. As discussed previously, all of the instance variables are declared in the Board class. But it is the ElevensBoard class that “knows” the board size, and the ranks, suits, and point values of the cards in the deck. How do the Board instance variables get initialized with the ElevensBoard values? What is the exact mechanism?
+	The Board class must have a constructor in it that allows other classes to create objects of that class with the given parameters, such as board size and a card object (which would have the ranks, suits, and point values). 
+	
+3. Now examine the files Board.java, and ElevensBoard.java, found in the Activity8 Starter Code directory. Identify the abstract methods in Board.java. See how these methods are implemented in ElevensBoard. Do they cover all the differences between Elevens, Thirteens, and Tens as discussed in question 1? Why or why not?
+	I think that it does not cover everything, such as special cards. However, the cards are created with a card object and therefore can be created somewhere else. 
